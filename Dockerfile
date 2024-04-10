@@ -28,7 +28,8 @@ RUN wget https://scip.zib.de/download/release/scipoptsuite-7.0.2.tgz && \
     cd build && \
     cmake -DPAPILO=off .. && \
     make && \
-    make install
+    make install && \
+    rm -rf /scipoptsuite-7.0.2.tgz /scipoptsuite-7.0.2
 
 # Set environment variables for SCIP
 ENV SCIPOPTDIR /usr/local
@@ -36,5 +37,5 @@ ENV SCIPOPTDIR /usr/local
 # Set include path for SCIP headers
 ENV C_INCLUDE_PATH "${SCIPOPTDIR}/include:${C_INCLUDE_PATH}"
 
-# Install PySCIPOpt
+# Install PySCIPOpt compatible with SCIP 7.0.2
 RUN pip install pyscipopt==3.1.0
