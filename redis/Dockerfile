@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir redis
 EXPOSE 6379
 
 # Launch Redis server
-CMD ["redis-server"]
+CMD ["redis-server", "--daemonize", "yes"]
