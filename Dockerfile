@@ -1,5 +1,5 @@
 # Use Python 3.10 image as base
-FROM python:3.10-slim
+FROM python:3.10
 
 # Install essential dependencies
 RUN apt-get update && \
