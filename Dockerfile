@@ -26,7 +26,7 @@ RUN wget https://scip.zib.de/download/release/scipoptsuite-9.0.1.tgz && \
     cd scipoptsuite-9.0.1 && \
     mkdir build && \
     cd build && \
-    cmake -DPAPILO=off .. && \
+    cmake -DPAPILO=off -DIPOPT=off .. && \
     make && \
     make install && \
     rm -rf /scipoptsuite-9.0.1.tgz /scipoptsuite-9.0.1
@@ -38,4 +38,4 @@ ENV SCIPOPTDIR /usr/local
 ENV C_INCLUDE_PATH "${SCIPOPTDIR}/include:${C_INCLUDE_PATH}"
 
 # Install PySCIPOpt compatible with SCIP 9.0.1
-RUN pip install pyscipopt==5.0.0
+RUN pip install pyscipopt==5.0.1
