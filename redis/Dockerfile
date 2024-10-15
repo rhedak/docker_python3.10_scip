@@ -1,5 +1,5 @@
 # Use Python 3.10 image with scip as base
-FROM rhedak/py310_scip:v0.0.3
+FROM rhedak/py310_scip:v0.0.4
 
 # Install Redis server
 RUN apt-get update && apt-get install -y redis-server
